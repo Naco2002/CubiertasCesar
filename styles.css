@@ -1,167 +1,4 @@
-[13:22, 18/10/2024] Ignacio: /* Estilos globales */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-body {
-    line-height: 1.6;
-}
-
-header {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 10px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-}
-
-nav a:hover {
-    background-color: #444;
-}
-
-.banner {
-    width: 100%;
-    height: 400px;
-    background: url('https://via.placeholder.com/1600x400') no-repeat center center/cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
-}
-
-.banner h1 {
-    font-size: 48px;
-}
-
-.banner button {
-    padding: 15px 30px;
-    background-color: #f44336;
-    border: none;
-    color: white;
-    font-size: 18px;
-    cursor: pointer;
-}
-
-.products, .services {
-    padding: 50px;
-    text-align: center;
-}
-
-.products h2, .services h2 {
-    font-size: 36px;
-    margin-bottom: 30px;
-}
-
-.products .product, .services .service {
-    display: inline-block;
-    width: 30%;
-    margin: 0 15px;
-}
-
-.product img, .service img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.product button, .service button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    cursor: pointer;
-}
-
-.product button:hover, .service button:hover {
-    background-color: #45a049;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 50px;
-}
-
-footer a {
-    color: white;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-.contact {
-    background-color: #f4f4f4;
-    padding: 50px;
-    text-align: center;
-}
-
-.contact h2 {
-    margin-bottom: 30px;
-}
-
-.contact form {
-    display: inline-block;
-    text-align: left;
-}
-
-.contact form input, .contact form textarea {
-    display: block;
-    width: 100%;
-    margin-bottom: 15px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-.contact form button {
-    padding: 10px 20px;
-    background-color: #333;
-    border: none;
-    color: white;
-    cursor: pointer;
-}
-
-.contact form button:hover {
-    background-color: #555;
-}
-
-@media(max-width: 768px) {
-    .product, .service {
-        width: 90%;
-        margin-bottom: 20px;
-    }
-
-    .banner h1 {
-        font-size: 32px;
-    }
-
-    .banner button {
-        font-size: 16px;
-        padding: 10px 20px;
-    }
-}
-[13:25, 18/10/2024] Ignacio: /* ----- Estilos Globales ----- */
+/* ----- Estilos Globales ----- */
 * {
     margin: 0;
     padding: 0;
@@ -205,14 +42,21 @@ nav a:hover {
 
 /* ----- Estilos del Banner ----- */
 .banner {
-    width: 100%;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTv2at3bIMfjXfBoDyp-0SNWTUwTB9rHHrz7Q&s');
+    background-size: cover;
+    background-position: center;
     height: 400px;
-    background: url('https://via.placeholder.com/1600x400') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     text-align: center;
+}
+
+.banner-content {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
 }
 
 .banner h1 {
@@ -233,31 +77,37 @@ nav a:hover {
     background-color: #d32f2f;
 }
 
-/* ----- Estilos de la Sección de Productos ----- */
 .products {
     padding: 50px;
     text-align: center;
     background-color: #f4f4f4;
+    display: flex; /* Habilita flexbox en el contenedor */
+    justify-content: space-around; /* Espacia los productos de manera uniforme */
+    flex-wrap: wrap; /* Permite que los productos se ajusten a diferentes líneas si es necesario */
 }
 
 .products h2 {
     font-size: 36px;
     margin-bottom: 30px;
+    width: 100%; /* Asegura que el título ocupe todo el ancho */
+    text-align: center; /* Centra el título */
 }
 
 .product {
-    display: inline-block;
-    width: 30%;
-    margin: 0 15px;
-    padding: 10px;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%; /* Ajusta el ancho del producto */
+    margin: 15px; /* Espaciado entre productos */
+    display: flex;
+    flex-direction: column; /* Permite que el contenido se organice verticalmente */
+    justify-content: space-between; /* Espacia uniformemente el contenido */
+    height: 400px; /* Mantiene la altura consistente */
 }
 
 .product img {
     width: 100%;
-    height: 200px;
+    height: 200px; /* Mantiene la altura de la imagen consistente */
     object-fit: cover;
     border-radius: 8px;
 }
@@ -270,6 +120,7 @@ nav a:hover {
 .product p {
     font-size: 16px;
     margin-bottom: 10px;
+    flex-grow: 1; /* Permite que el texto crezca y empuje el botón hacia abajo */
 }
 
 .product button {
@@ -285,30 +136,38 @@ nav a:hover {
     background-color: #45a049;
 }
 
+
 /* ----- Estilos de la Sección de Servicios ----- */
 .services {
     padding: 50px;
     text-align: center;
+    display: flex; /* Cambiar a flexbox */
+    justify-content: space-around; /* Espaciado uniforme entre los divs */
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan en varias filas si es necesario */
 }
 
 .services h2 {
     font-size: 36px;
     margin-bottom: 30px;
+    width: 100%; /* Asegura que el título ocupe todo el ancho */
 }
 
 .service {
-    display: inline-block;
-    width: 30%;
-    margin: 0 15px;
-    padding: 10px;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1; /* Cada div ocupa el mismo espacio */
+    margin: 0 15px; /* Espaciado lateral entre divs */
+    max-width: 300px; /* Limitar el ancho máximo para mantener uniformidad */
+    display: flex;
+    flex-direction: column; /* Organiza el contenido verticalmente */
+    justify-content: space-between; /* Espaciado uniforme del contenido */
+    padding: 10px; /* Espaciado interno */
 }
 
 .service img {
     width: 100%;
-    height: 200px;
+    height: 200px; /* Mantiene la altura de la imagen consistente */
     object-fit: cover;
     border-radius: 8px;
 }
@@ -321,6 +180,7 @@ nav a:hover {
 .service p {
     font-size: 16px;
     margin-bottom: 10px;
+    flex-grow: 1; /* Permite que el texto crezca y empuje el botón hacia abajo */
 }
 
 .service button {
@@ -336,47 +196,70 @@ nav a:hover {
     background-color: #0056b3;
 }
 
+
+/* ----- Estilos de la Sección de Contacto ----- */
 .contact {
     padding: 40px 20px;
-    background-color: #f9f9f9; /* Fondo claro */
-    text-align: center; /* Centrar el contenido */
+    background-color: #f9f9f9;
+    text-align: center;
 }
 
 .contact h2 {
-    font-size: 2em; /* Tamaño de fuente grande */
-    margin-bottom: 20px; /* Espaciado inferior */
+    font-size: 2em;
+    margin-bottom: 20px;
 }
 
 .contact-info {
-    max-width: 600px; /* Ancho máximo */
-    margin: 0 auto; /* Centrar contenido */
-    background-color: #fff; /* Fondo blanco */
-    padding: 20px; /* Espaciado interno */
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .contact-info p {
-    font-size: 18px; /* Tamaño de fuente */
-    line-height: 1.5; /* Espaciado entre líneas */
+    font-size: 18px;
+    line-height: 1.5;
 }
 
-.social-links {
-    margin-top: 20px; /* Espaciado superior */
+/* ----- Estilos de la Sección de Especificaciones ----- */
+.specifications {
+    padding: 50px;
+    background-color: #e6f7ff;
+    display: none; /* Ocultamos la sección al inicio */
 }
 
-.social-links button {
-    margin: 0 10px; /* Espaciado entre botones */
-    padding: 10px 20px; /* Espaciado interno del botón */
-    border: none; /* Sin borde */
-    border-radius: 5px; /* Bordes redondeados */
-    background-color: #007BFF; /* Color de fondo */
-    color: white; /* Color del texto */
-    cursor: pointer; /* Cambia el cursor al pasar por encima */
+.specs-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
 }
 
-.social-links button:hover {
-    background-color: #0056b3; /* Color más oscuro al pasar el mouse */
+.specs-content img {
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.specs-content h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.specs-content p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Mostramos la sección cuando esté activa */
+.specifications.active {
+    display: block;
+}
+
+.specifications h2 {
+    text-align: center;
 }
 
 /* ----- Estilos del Footer ----- */
@@ -419,7 +302,17 @@ footer a:hover {
     .contact form {
         width: 90%;
     }
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-content img, .about-text {
+        width: 100%;
+    }
 }
+
 /* ----- Estilos de la Sección Nosotros ----- */
 .about {
     padding: 50px;
@@ -458,16 +351,6 @@ footer a:hover {
     margin-bottom: 20px;
 }
 
-@media (max-width: 768px) {
-    .about-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .about-content img, .about-text {
-        width: 100%;
-    }
-}
 /* Botón "Volver al inicio" */
 .to-top {
     position: fixed;
@@ -488,42 +371,4 @@ footer a:hover {
 
 .to-top:hover {
     background-color: #555;
-}
-/* ----- Sección de Especificaciones ----- */
-.specifications {
-    padding: 50px;
-    background-color: #e6f7ff;
-    display: none; /* Ocultamos la sección al inicio */
-}
-
-.specs-content {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.specs-content img {
-    width: 100%;
-    height: auto;
-    margin: 20px 0;
-    border-radius: 10px;
-}
-
-.specs-content h3 {
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.specs-content p {
-    font-size: 18px;
-    line-height: 1.6;
-}
-
-/* Mostramos la sección cuando esté activa */
-.specifications.active {
-    display: block;
-}
-
-.specifications h2{
-    text-align: center;
 }
